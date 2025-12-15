@@ -3,15 +3,13 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "pip_audit"
+name = "dbt-pip-audit"
 dynamic = ["version"]
-description = "A tool for scanning Python environments for known vulnerabilities"
+description = "DBT tool for scanning Python environments for known vulnerabilities"
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [
-    { name = "Alex Cameron" },
-    { name = "Dustin Ingram", email = "di@python.org" },
-    { name = "William Woodruff", email = "william@trailofbits.com" },
+    { name = "Mouhajer Zaouali", email = "mouhajer.zaouali@digital.trade.gov.uk" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -56,12 +54,12 @@ doc = ["pdoc"]
 dev = ["build", "pip-audit[doc,test,lint]"]
 
 [project.scripts]
-pip-audit = "pip_audit._cli:audit"
+dbt-pip-audit = "pip_audit._cli:audit"
 
 [project.urls]
-Homepage = "https://pypi.org/project/pip-audit/"
-Issues = "https://github.com/pypa/pip-audit/issues"
-Source = "https://github.com/pypa/pip-audit"
+Homepage = "https://pypi.org/project/dbt-pip-audit/"
+Issues = "https://github.com/uktrade/pip-audit/issues"
+Source = "https://github.com/uktrade/pip-audit"
 
 [tool.coverage.paths]
 # This is used for path mapping when combining coverage data
@@ -111,3 +109,6 @@ line-length = 100
 # Never enforce `E501` (line length violations).
 ignore = ["E501"]
 select = ["E", "F", "I", "W", "UP"]
+
+[tool.flit.module]
+name = "pip_audit"
